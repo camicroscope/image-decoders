@@ -1,5 +1,6 @@
 # To see where, if it fails
 set -x
+set -e
 
 mkdir equivs
 cd equivs

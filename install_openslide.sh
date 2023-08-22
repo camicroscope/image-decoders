@@ -1,5 +1,6 @@
 # To see where, if it fails
 set -x
+set -e
 
 # Use the main branch until we have a release with DICOM
 # otherwise: --branch=v3.4.1, etc.

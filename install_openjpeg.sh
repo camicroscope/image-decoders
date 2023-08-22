@@ -1,5 +1,6 @@
 # To see where, if it fails
 set -x
+set -e
 
 git clone https://github.com/uclouvain/openjpeg.git --branch=v2.5.0 --depth=1
 mkdir /root/src/openjpeg/build

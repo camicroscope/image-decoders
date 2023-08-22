@@ -1,5 +1,6 @@
 # To see where, if it fails
 set -x
+set -e
 
 # Note: This script should be early in any Dockerfile as JDKs are big
 
