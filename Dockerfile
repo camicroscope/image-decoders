@@ -16,6 +16,7 @@ WORKDIR /root/src
 RUN ./install_openjpeg.sh
 
 ### OpenSlide
+# alternative: apt-get install libopenslide-dev
 WORKDIR /root/src
 RUN ./install_openslide.sh
 
