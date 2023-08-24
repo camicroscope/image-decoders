@@ -1,4 +1,4 @@
-e# To see where, if it fails
+# To see where, if it fails
 set -x
 set -e
 
