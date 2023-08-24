@@ -32,6 +32,7 @@ WORKDIR /root/src
 
 RUN mkdir -p /usr/lib/java
 ENV BFBRIDGE_CLASSPATH=/usr/lib/java
+ENV CLASSPATH=/usr/lib/java
 ENV BFBRIDGE_CACHEDIR=/tmp/
 
 COPY install_bioformats.sh .
