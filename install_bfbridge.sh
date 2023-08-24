@@ -12,11 +12,11 @@ git clone https://github.com/camicroscope/BFBridge.git bfbridge -q --depth 1
 
 cd /root/src/bfbridge/java
 
-# Classpath of "." and "../jar_files/*" means look for Java classes in this folder
-# (which contains:  org/camicroscope/*) and in ../jar_files/* (containing:
+# Classpath of "." and "/usr/lib/java/*" means look for Java classes in this folder
+# (which contains:  org/camicroscope/*) and in /usr/lib/java/* (containing:
 # bioformats package jar). So each element is a folder containing classes or a Jar file
-# hence not "../jar_files/", as this is a folder containing a Jar file, so neither.
-javac -cp ".:../jar_files/*" org/camicroscope/BFBridge.java
+# hence not "/usr/lib/java/", as this is a folder containing a Jar file, so neither.
+javac -cp ".:/usr/lib/java/*" org/camicroscope/BFBridge.java
 
 # pack into uncompressed Jar
 jar c0f BfBridge.jar org/camicroscope/*.class
