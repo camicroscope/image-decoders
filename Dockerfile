@@ -38,6 +38,10 @@ COPY install_bioformats.sh .
 RUN chmod a+x install_bioformats.sh
 RUN ./install_bioformats.sh
 
+COPY install_bfbridge.sh .
+RUN chmod a+x install_bfbridge.sh
+RUN ./install_bfbridge.sh
+
 ### bring the remaining files
 ## (previous ones needed extra caching due to their size)
 COPY . /root/src

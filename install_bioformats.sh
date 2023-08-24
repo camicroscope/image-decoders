@@ -2,16 +2,10 @@
 set -x
 set -e
 
-# disable git warnings about saving edits to head
-git config --global advice.detachedHead false
-
-# Please remember to update version here if uncommented: --branch v0.2
-git clone https://github.com/camicroscope/BFBridge.git bfbridge -q --depth 1
-cd bfbridge
-mkdir /root/src/bfbridge/jar_files/
-cd /root/src/bfbridge/jar_files/
-
 ## BioFormats
+
+mkdir bioformats
+cd bioformats
 
 # URL from: https://downloads.openmicroscopy.org/bio-formats/7.0.0/artifacts/
 wget -q https://downloads.openmicroscopy.org/bio-formats/7.0.0/artifacts/bioformats_package.jar -O bioformats_all_in_one_compressed.jar
@@ -36,32 +30,10 @@ cd ..
 rm -r temp
 rm logger_printing_errors_only_compressed.jar
 
-
-
-## BioFormats wrapper
-
-cd /root/src/bfbridge/java
-
-# todo deleteme
-#ls /root/src/bfbridge/jar_files/
-#ls ../jar_files/
-#jar tvf ../jar_files/bioformats_all_in_one.jar
-#apt install file
-#file /root/src/bfbridge/jar_files/bioformats_all_in_one.jar
-#xqddw
-
-# Classpath of "." and "../jar_files/*" means look for Java classes in this folder
-# (which contains:  org/camicroscope/*) and in ../jar_files/* (containing:
-# bioformats package jar). So each element is a folder containing classes or a Jar file
-# hence not "../jar_files/", as this is a folder containing a Jar file, so neither.
-javac -cp ".:../jar_files/*" org/camicroscope/BFBridge.java
-
-# pack into uncompressed Jar
-jar c0f BfBridge.jar org/camicroscope/*.class
-
+# to verify jar contents, you may do:
+# jar tvf ../jar_files/bioformats_all_in_one.jar
 
 ## Move them to a single directory
-mv /root/src/bfbridge/java/BfBridge.jar /usr/lib/java
-mv /root/src/bfbridge/jar_files/* /usr/lib/java
+mv /root/src/bioformats/* /usr/lib/java
 
-#### Missing optimization: Packing them to a single Jar
+#### Missing optimization: Packing all Jars to a single Jar
