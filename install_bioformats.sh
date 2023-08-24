@@ -1,4 +1,4 @@
-# To see where, if it fails
+e# To see where, if it fails
 set -x
 set -e
 
@@ -6,7 +6,7 @@ set -e
 git config --global advice.detachedHead false
 
 # Please remember to update version here
-git clone https://github.com/camicroscope/BFBridge.git bfbridge -q --branch v0.1 --depth 1
+git clone https://github.com/camicroscope/BFBridge.git bfbridge -q --branch v0.2 --depth 1
 cd bfbridge
 mkdir /root/src/bfbridge/jar_files/
 cd /root/src/bfbridge/jar_files/
