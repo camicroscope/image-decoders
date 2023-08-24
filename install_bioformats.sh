@@ -5,8 +5,8 @@ set -e
 # disable git warnings about saving edits to head
 git config --global advice.detachedHead false
 
-# Please remember to update version here
-git clone https://github.com/camicroscope/BFBridge.git bfbridge -q --branch v0.2 --depth 1
+# Please remember to update version here if uncommented: --branch v0.2
+git clone https://github.com/camicroscope/BFBridge.git bfbridge -q --depth 1
 cd bfbridge
 mkdir /root/src/bfbridge/jar_files/
 cd /root/src/bfbridge/jar_files/
