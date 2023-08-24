@@ -5,7 +5,7 @@ set -e
 # disable git warnings about saving edits to head
 git config --global advice.detachedHead false
 
-# Please remember to update version here if uncommented: --branch v0.2
+# Please remember to update version here if uncommented: --branch v0.5
 git clone https://github.com/camicroscope/BFBridge.git bfbridge -q --branch v0.3 --depth 1
 
 ## BioFormats wrapper
