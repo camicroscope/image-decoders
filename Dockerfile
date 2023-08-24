@@ -28,17 +28,17 @@ ENV JAVA_HOME=/java_home
 ENV PATH="/java_home/bin:$PATH"
 
 ### BioFormats
-WORKDIR /root/src
-
 RUN mkdir -p /usr/lib/java
 ENV BFBRIDGE_CLASSPATH=/usr/lib/java
 ENV CLASSPATH=/usr/lib/java
 ENV BFBRIDGE_CACHEDIR=/tmp/
 
+WORKDIR /root/src
 COPY install_bioformats.sh .
 RUN chmod a+x install_bioformats.sh
 RUN ./install_bioformats.sh
 
+WORKDIR /root/src
 COPY install_bfbridge.sh .
 RUN chmod a+x install_bfbridge.sh
 RUN ./install_bfbridge.sh
