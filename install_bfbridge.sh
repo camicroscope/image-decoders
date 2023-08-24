@@ -6,7 +6,7 @@ set -e
 git config --global advice.detachedHead false
 
 # Please remember to update version here if uncommented: --branch v0.5
-git clone https://github.com/camicroscope/BFBridge.git bfbridge -q --branch v0.3 --depth 1
+git clone https://github.com/camicroscope/BFBridge.git bfbridge -q --branch v0.5 --depth 1
 
 ## BioFormats wrapper
 
